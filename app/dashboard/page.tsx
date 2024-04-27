@@ -5,6 +5,11 @@ import LatestInvoices from "../ui/dashboard/latest-invoices";
 import { Card } from "../ui/dashboard/cards";
 import { Suspense } from "react";
 import { LatestInvoicesSkeleton, RevenueChartSkeleton } from "../ui/skeletons";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Dashboard',
+};
 
 export default async function Page() {
     const {totalPaidInvoices,totalPendingInvoices,numberOfCustomers,numberOfInvoices } = await fetchCardData()
